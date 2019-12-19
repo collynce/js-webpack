@@ -1,3 +1,1 @@
-sayHello = () => {
-    document.getElementById("name").innerHTML = document.getElementById('para').innerHTML;
-};
+import './sass/main.scss'

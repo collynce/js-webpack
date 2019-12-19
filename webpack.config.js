@@ -24,7 +24,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
  *
  */
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /*
  * We've enabled TerserPlugin for you! This minifies your app
@@ -48,7 +48,7 @@ module.exports = {
 	plugins: [
 		new webpack.ProgressPlugin(),
 		new CleanWebpackPlugin(),
-		new MiniCssExtractPlugin({ filename: 'style.[hash].css' }),
+		// new MiniCssExtractPlugin({ filename: 'style.[hash].css' }),
 		new workboxPlugin.GenerateSW({
 			swDest: 'sw.js',
 			clientsClaim: true,
@@ -75,12 +75,12 @@ module.exports = {
 				loader: 'babel-loader'
 			},
 			{
-				test: /.(scss|css)$/,
+				test: /\.(s*)css$/,
 
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader
-					},
+					// {
+					// 	loader: MiniCssExtractPlugin.loader
+					// },
 					{
 						loader: 'style-loader'
 					},
@@ -121,3 +121,4 @@ module.exports = {
 		}
 	}
 };
+
